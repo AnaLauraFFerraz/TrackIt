@@ -18,7 +18,6 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
         border: 0;
         font-size: 100%;
-        font-family: 'Lexend Deca';
         vertical-align: baseline;
     }
     /* HTML5 display-role reset for older browsers */
@@ -28,6 +27,7 @@ const GlobalStyle = createGlobalStyle`
     }
     body {
         line-height: 1;
+        font-family: 'Lexend Deca';
     }
     ol, ul {
         list-style: none;
