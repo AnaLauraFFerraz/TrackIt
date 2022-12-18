@@ -1,24 +1,28 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from './pages/Login'
-import SignUp from './pages/SignUp'
-import Habits from './pages/Habits'
-import Today from './pages/Today'
-import History from './pages/History'
+//import { useState } from 'react';
+import Context from './Context';
+import LoginPage from './pages/LoginPage'
+import SignUpPage from './pages/SignUpPage'
+import HabitsPage from './pages/HabitsPage'
+import TodayPage from './pages/TodayPage'
+import HistoryPage from './pages/HistoryPage'
 
 function App() {
-
+  // const [user, setUser] = useState({});
+  // const [percentage, setPercentage] = useState(0);
+// value={{ user, setUser, percentage, setPercentage }}
   return (
-    <UserContext.Provider value={{ user, setUser, percentage, setPercentage }}>
+    <Context.Provider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/cadastro" element={<SignUp />} />
-          <Route path="/habitos" element={<Habits />} />
-          <Route path="/hoje" element={<Today />} />
-          <Route path="/historico" element={<History />} />
+          <Route path="/" element={<LoginPage />} />
+          <Route path="/cadastro" element={<SignUpPage />} />
+          <Route path="/habitos" element={<HabitsPage />} />
+          <Route path="/hoje" element={<TodayPage />} />
+          <Route path="/historico" element={<HistoryPage />} />
         </Routes>
       </BrowserRouter>
-    </UserContext.Provider>
+    </Context.Provider>
   );
 }
 
