@@ -1,12 +1,15 @@
+import { useContext } from "react";
 import styled from "styled-components"
+import { UserContext } from "../UserContext";
 import trackIt from "../assets/TrackIt.png"
 
 export default function Header() {
+    const { user } = useContext(UserContext);
 
     return (
         <Container>
             <img src={trackIt} alt="TrackIt" />
-            <Profile />
+            <Profile src={user.image} />
         </Container>
     )
 }
@@ -30,6 +33,6 @@ const Container = styled.header`
 `
 const Profile = styled.div`
     width: 51px;
-    background: orange;
     border-radius: 98.5px;
+    border: none;
 `
