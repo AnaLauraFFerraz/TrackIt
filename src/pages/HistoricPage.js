@@ -2,23 +2,27 @@ import styled from "styled-components"
 import Header from "../components/Header"
 import Menu from "../components/Menu"
 
-export default function HistoryPage() {
+export default function HistoricPage() {
 
     return (
         <>
-            <Header />
-            <Content>
+            <div data-test="header">
+                <Header />
+            </div>
+            <Container>
                 <h3>Histórico</h3>
                 <p>
                     Em breve você poderá ver o histórico dos seus hábitos aqui!
                 </p>
-            </Content>
-            <Menu />
+            </Container>
+            <div data-test="menu">
+                <Menu />
+            </div>
         </>
     )
 }
 
-const Content = styled.div`
+const Container = styled.div`
     display: flex;
     flex-direction: column;
     box-sizing: border-box;

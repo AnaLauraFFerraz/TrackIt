@@ -26,8 +26,9 @@ const GlobalStyle = createGlobalStyle`
         display: block;
     }
     body {
-        line-height: 1;
         font-family: 'Lexend Deca';
+        width: 100vw;
+        height: 100vw;
     }
     ol, ul {
         list-style: none;

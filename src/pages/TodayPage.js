@@ -6,19 +6,23 @@ export default function TodayPage() {
 
     return (
         <>
-            <Header />
-            <Content>
+            <div data-test="header">
+                <Header />
+            </div>
+            <Container>
                 <h3>Hoje, 18/12</h3>
                 <p>
                     Nenhum hábito concluído ainda
                 </p>
-            </Content>
-            <Menu />
+            </Container>
+            <div data-test="menu">
+                <Menu />
+            </div>
         </>
     )
 }
 
-const Content = styled.div`
+const Container = styled.div`
     display: flex;
     flex-direction: column;
     box-sizing: border-box;

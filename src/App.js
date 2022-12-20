@@ -9,8 +9,7 @@ import TodayPage from './pages/TodayPage'
 import HistoricPage from './pages/HistoricPage'
 
 function App() {
-  const [user, setUser] = useState({});;
-  // const [token, setToken] = useState("");
+  const [user, setUser] = useState({});
   const [image, setImage] = useState("");
 
   return (

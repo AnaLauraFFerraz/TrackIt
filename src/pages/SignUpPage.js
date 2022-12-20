@@ -61,6 +61,7 @@ export default function SignUpPage() {
                             })
                         }}
                         required
+                        data-test="email-input"
                     />
                     <input
                         type="password"
@@ -75,6 +76,7 @@ export default function SignUpPage() {
                             })
                         }}
                         required
+                        data-test="password-input"
                     />
                     <input
                         type="text"
@@ -89,6 +91,7 @@ export default function SignUpPage() {
                             })
                         }}
                         required
+                        data-test="user-name-input"
                     />
                     <input
                         type="url"
@@ -103,8 +106,9 @@ export default function SignUpPage() {
                             })
                         }}
                         required
+                        data-test="user-image-input"
                     />
-                    <button type="submit" onSubmit={() => registerUser()} disabled={loading}>
+                    <button type="submit" onSubmit={() => registerUser()} disabled={loading} data-test="signup-btn">
                         {
                             loading ? <ThreeDots
                                 height="15"
@@ -117,7 +121,7 @@ export default function SignUpPage() {
                         }
                     </button>
                 </Form>
-                <Link to="/">
+                <Link to="/" data-test="login-link">
                     <p>Já tem uma conta? Faça login!</p>
                 </Link>
             </Container>

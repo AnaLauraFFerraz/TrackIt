@@ -1,24 +1,20 @@
 import styled from "styled-components"
-import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 export default function Menu() {
+
+    const navigate = useNavigate();
 
     return (
         <>
             <Container>
                 <div>
-                    <Link to="/habitos" >
-                        <NavButtons>Hábitos</NavButtons>
-                    </Link>
-                    <Link to="/historico" >
-                        <NavButtons>Histórico</NavButtons>
-                    </Link>
+                    <NavButtons onClick={() => navigate("/habitos")}>Hábitos</NavButtons>
+                    <NavButtons onClick={() => navigate("/historico")}>Histórico</NavButtons>
                 </div>
             </Container>
             <TodayContainer>
-                <Link to="/hoje" >
-                    <TodayButton>Hoje</TodayButton>
-                </Link>
+                <TodayButton onClick={() => navigate("/hoje")}>Hoje</TodayButton>
             </TodayContainer>
         </>
     )
