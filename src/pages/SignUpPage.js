@@ -7,6 +7,7 @@ import logo from "../assets/logo.png";
 
 export default function SignUpPage() {
 
+    const [signupData, setSignupData] = useState({});
     const [loading, setLoading] = useState(false);
     const [form, setForm] = useState({
         email: '',
@@ -28,17 +29,16 @@ export default function SignUpPage() {
             image: form.image,
             password: form.password
         };
-        console.log("body: ", body);
 
         const promise = axios.post(urlSignUp, body);
         promise.then((res) => {
-            console.log(res.data);
+            setSignupData(res.body);
+            console.log(signupData)
             alert("Usuário cadastrado com sucesso!");
             navigate("/");
         });
         promise.catch((err) => {
-            console.log(err.response.data);
-            alert("Erro SignUp");
+            alert("Erro ao fazer o cadastro");
             setLoading(false);
         });
     }
@@ -61,7 +61,6 @@ export default function SignUpPage() {
                             })
                         }}
                         required
-                        data-test="email-input"
                     />
                     <input
                         type="password"
@@ -76,7 +75,6 @@ export default function SignUpPage() {
                             })
                         }}
                         required
-                        data-test="password-input"
                     />
                     <input
                         type="text"
@@ -91,7 +89,6 @@ export default function SignUpPage() {
                             })
                         }}
                         required
-                        data-test="user-name-input"
                     />
                     <input
                         type="url"
@@ -106,9 +103,8 @@ export default function SignUpPage() {
                             })
                         }}
                         required
-                        data-test="user-image-input"
                     />
-                    <button type="submit" onSubmit={() => registerUser()} disabled={loading} data-test="signup-btn">
+                    <button type="submit" onSubmit={() => registerUser()} disabled={loading}>
                         {
                             loading ? <ThreeDots
                                 height="15"
@@ -121,7 +117,7 @@ export default function SignUpPage() {
                         }
                     </button>
                 </Form>
-                <Link to="/" data-test="login-link">
+                <Link to="/">
                     <p>Já tem uma conta? Faça login!</p>
                 </Link>
             </Container>
