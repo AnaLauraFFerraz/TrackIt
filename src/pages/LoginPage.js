@@ -26,19 +26,20 @@ export default function LoginPage() {
         promise.then((res) => {
             setUser(
                 {
-                    id: res.data.id,
-                    name: res.data.name,
-                    image: res.data.image,
-                    email: res.data.email,
-                    token: res.data.token,
+                    id: res.body.id,
+                    name: res.body.name,
+                    image: res.body.image,
+                    email: res.body.email,
+                    token: res.body.token,
                 },
             );
             console.log(user);
             navigate("/hoje");
         });
         promise.catch((err) => {
+            console.log("ERR Login: ", err)
             setLoading(false);
-            alert(err.response.data);
+            alert("Erro ao fazer login");
         });
     }
 
@@ -54,7 +55,6 @@ export default function LoginPage() {
                     onChange={(e) => setEmail(e.target.value)}
                     disabled={loading}
                     required
-                    data-test="email-input"
                 />
                 <input
                     type="password"
@@ -63,9 +63,8 @@ export default function LoginPage() {
                     onChange={(e) => setPassword(e.target.value)}
                     disabled={loading}
                     required
-                    data-test="password-input"
                 />
-                <button type="submit" data-test="login-btn">
+                <button type="submit">
                     {
                         loading ? <ThreeDots
                             width="60"
@@ -78,7 +77,7 @@ export default function LoginPage() {
                     }
                 </button>
             </Form>
-            <Link to="/cadastro" data-test="signup-link">
+            <Link to="/cadastro">
                 <p>Não tem uma conta? Cadastre-se!</p>
             </Link>
         </Container>
