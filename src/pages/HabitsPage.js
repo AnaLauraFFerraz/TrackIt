@@ -23,8 +23,8 @@ export default function HabitsPage() {
     })
 
     const urlHabitsList = `https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits`;
-    const urlHabits = `htts://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits`;
-    const config = {headers: {Authorization: `Bearer ${token}`}};
+    const urlHabits = `https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits`;
+    const config = { headers: { Authorization: `Bearer ${token}` } };
 
     useEffect(() => {
         const promise = axios.get(urlHabitsList);
@@ -68,9 +68,7 @@ export default function HabitsPage() {
 
     return (
         <>
-            <div data-test="header">
-                <Header />
-            </div>
+            <Header />
             <MainContent>
                 <Container>
                     <h3>Meus Hábitos</h3>
@@ -82,7 +80,7 @@ export default function HabitsPage() {
                         type="text"
                         id="name"
                         value={habitForm.name}
-                        placeholder="nome do hábito"
+                        placeholder="Nome do hábito"
                         onChange={(e) => {
                             setHabitForm({
                                 ...habitForm,
@@ -132,9 +130,7 @@ export default function HabitsPage() {
                 }
 
             </MainContent>
-            <div data-test="menu">
-                <Menu />
-            </div>
+            <Menu />
         </>
     )
 }

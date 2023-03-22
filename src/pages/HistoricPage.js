@@ -6,18 +6,14 @@ export default function HistoricPage() {
 
     return (
         <>
-            <div data-test="header">
-                <Header />
-            </div>
+            <Header />
             <Container>
                 <h3>Histórico</h3>
                 <p>
                     Em breve você poderá ver o histórico dos seus hábitos aqui!
                 </p>
             </Container>
-            <div data-test="menu">
-                <Menu />
-            </div>
+            <Menu />
         </>
     )
 }

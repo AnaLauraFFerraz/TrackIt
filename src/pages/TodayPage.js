@@ -6,18 +6,14 @@ export default function TodayPage() {
 
     return (
         <>
-            <div data-test="header">
-                <Header />
-            </div>
+            <Header />
             <Container>
                 <h3>Hoje, 18/12</h3>
                 <p>
                     Nenhum hábito concluído ainda
                 </p>
             </Container>
-            <div data-test="menu">
-                <Menu />
-            </div>
+            <Menu />
         </>
     )
 }
